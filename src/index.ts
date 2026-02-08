@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.get('/', (_, res) => {
-    res.send('Calculator Home Page');
+    res.send('Calculator Home Page updated');
+})
+
+app.get('/home', (_, res) => {
+    res.json({
+        features: ['/sum', '/diff', '/mul', '/div']
+    })
 })
 
 app.get('/sum/:a/:b', (req, res) => {
