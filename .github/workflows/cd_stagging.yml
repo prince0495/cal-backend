@@ -18,8 +18,4 @@ jobs:
                 touch /home/runner/.ssh/known_hosts
                 echo "${{ secrets.KNOWN_HOSTS }}" > /home/runner/.ssh/known_hosts
                 chmod 700 /home/runner/ssh_key
-                ssh -i ~/ssh_key ubuntu@13.234.66.223
-                cd home/cal-backend && git pull
-                npm install
-                npm tsc -b
-                pm2 restart index
+                ssh -i ~/ssh_key ubuntu@13.234.66.223 -t "cd home/cal-backend && git pull origin main && npm install && npm tsc -b && pm2 restart index"
