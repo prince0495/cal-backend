@@ -13,8 +13,8 @@ jobs:
         steps:
             - name: SSH into the server
               run: |
-                echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
-                ssh -i ~/ssh_key root@13.234.66.223
+                echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/ssh_key
+                ssh -i ~/ssh_key ubuntu@13.234.66.223
                 cd home/cal-backend && git pull
                 npm install
                 npm tsc -b
