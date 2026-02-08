@@ -17,6 +17,10 @@ app.get('/home', (_, res) => {
     })
 })
 
+app.get('/new', (_, res) => {
+    res.send('New Page added via CI/CD');
+})
+
 app.get('/sum/:a/:b', (req, res) => {
     const a:number = Number(req.params.a);
     const b:number = Number(req.params.b);

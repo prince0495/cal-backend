@@ -19,3 +19,6 @@ jobs:
                 echo "${{ secrets.KNOWN_HOSTS }}" > /home/runner/.ssh/known_hosts
                 chmod 700 /home/runner/ssh_key
                 ssh -i ~/ssh_key ubuntu@13.234.66.223 -t "cd home/cal-backend && git pull origin main && export PATH=/home/ubuntu/.nvm/versions/node/v24.13.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin && npm install && npx tsc -b && pm2 restart index"
+
+
+# Make another .yml for production where change 1. host_ip  2. "git pull origin production" instead of main
